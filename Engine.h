@@ -30,8 +30,6 @@ public:
 
 Engine::Engine(){
 	m_Window.create(VideoMode(VideoMode::getDesktopMode()), "Particles", Style::Default);
-
-	cout << "Width: " << VideoMode::getDesktopMode().width << " Height: " << VideoMode::getDesktopMode().height << endl;
 }
 
 void Engine::run(){
@@ -66,7 +64,6 @@ void Engine::input(){
 
 		if (event.mouseButton.button == Mouse::Left){
 			Vector2i mousePosition = Mouse::getPosition(m_Window);
-			cout << "Mouse Pos X: " << mousePosition.x << " Mouse Pos Y: " << mousePosition.y << endl;
 			for (int i = 0; i < 5; i++){
 				int numPoints = (rand() % 26) + 25;
 				m_particles.emplace_back(m_Window, numPoints, mousePosition);
