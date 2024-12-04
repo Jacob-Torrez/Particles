@@ -59,9 +59,9 @@ void Engine::input(){
 		}
 
 		if (event.mouseButton.button == Mouse::Left){
+			Vector2i mousePosition = Mouse::getPosition(m_Window);
 			for (int i = 0; i < 5; i++){
 				int numPoints = (rand() % 26) + 25;
-				Vector2i mousePosition(event.mouseMove.x, event.mouseMove.y);
 				m_particles.emplace_back(m_Window, numPoints, mousePosition);
 			}
 		}
